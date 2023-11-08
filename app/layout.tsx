@@ -1,8 +1,6 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 
-// First commit. 
-// First commit on first-branch. 
 export default function RootLayout({
   children,
 }: {
