@@ -33,7 +33,7 @@ export default async function Page() {
   );
 }
 
-/* Understanding the sql results
+/* Understanding the previous sql results
   console.log(revenue) // Here is the return from the database: 
     [
       { month: 'Jan', revenue: 2000 },
