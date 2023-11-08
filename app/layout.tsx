@@ -1,6 +1,7 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 
+// Showing active branches on Vercel. 
 export default function RootLayout({
   children,
 }: {
