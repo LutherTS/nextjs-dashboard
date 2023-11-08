@@ -20,12 +20,12 @@ export async function fetchRevenue() {
     // Artificially delay a reponse for demo purposes.
     // Don't do this in real life :)
 
-    console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    // console.log('Fetching revenue data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    console.log('Data fetch complete after 3 seconds.');
+    // console.log('Data fetch complete after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -38,12 +38,20 @@ export async function fetchLatestInvoices() {
   noStore()
 
   try {
+    // Artificially delay a reponse for demo purposes.
+    // Don't do this in real life :)
+
+    // console.log('Fetching invoices data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
       LIMIT 5`;
+
+    // console.log('Data fetch complete after 3 seconds.');
 
     const latestInvoices = data.rows.map((invoice) => ({
       ...invoice,
@@ -60,6 +68,13 @@ export async function fetchCardData() {
   noStore()
 
   try {
+
+    // Artificially delay a reponse for demo purposes.
+    // Don't do this in real life :)
+
+    // console.log('Fetching cards data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+
     // You can probably combine these into a single SQL query.
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
@@ -75,6 +90,8 @@ export async function fetchCardData() {
       customerCountPromise,
       invoiceStatusPromise,
     ]);
+
+    // console.log('Data fetch complete after 3 seconds.');
 
     const numberOfInvoices = Number(data[0].rows[0].count ?? '0');
     const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
