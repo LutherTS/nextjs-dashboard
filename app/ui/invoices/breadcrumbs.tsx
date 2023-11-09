@@ -25,7 +25,8 @@ export default function Breadcrumbs({
               breadcrumb.active ? 'text-gray-900' : 'text-gray-500',
             )}
           >
-            <Link className={clsx(
+            <Link 
+            className={clsx(
               breadcrumb.active ? 'cursor-default' : null,
             )} 
             href={breadcrumb.href}
