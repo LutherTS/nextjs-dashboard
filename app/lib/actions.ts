@@ -88,4 +88,5 @@ export async function deleteInvoice(id: string) {
 /*
 Might need some Created Invoice and Updated Invoice messages later on.
 I'm just gonna put them and see what happens.
+I see now. I makes redirects unreachable. 
 */
