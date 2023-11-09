@@ -8,6 +8,11 @@ import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/a
 // import { CardWrapper } from '@/app/ui/dashboard/cards';
 import CardWrapper from '@/app/ui/dashboard/cards'
 // Since it's default, it's not inside an object.
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 
 export default async function Page() {
   return (
