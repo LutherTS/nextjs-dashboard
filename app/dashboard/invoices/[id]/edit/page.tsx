@@ -29,3 +29,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     </main>
   );
 }
+
+/* Note
+Yup, id has to be id. I assume it needs to be the as in the params. 
+*/
