@@ -122,3 +122,8 @@ export default async function InvoicesTable({
     </div>
   );
 }
+
+/* Notes
+The reason why fetchFilteredInvoices(query, currentPage) gets called on pagination for example without me having to do anything is because every time the URL is changed either with replace(`${pathname}?${params.toString()}`) in Search or with createPageURL and its return `${pathname}?${params.toString()}` in pagination, it makes a new call to the server. 
+However, while the request to the server is distinguished from the navigation in the client, which it is done on the client side because the initiators of this navigation, Search and Pagination, are client side components.
+*/

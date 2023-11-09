@@ -12,8 +12,8 @@ import CardWrapper from '@/app/ui/dashboard/cards'
 export default async function Page() {
   return (
     <main>
-      {/* Keeping -mt-2 in mind. */}
-      <h1 className={`${lusitana.className} mb-4  text-xl md:text-2xl`}>
+      {/* Keeping -mt-2 in mind... Implemented. */}
+      <h1 className={`${lusitana.className} mb-4 -mt-2 text-xl md:text-2xl`}>
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -33,7 +33,7 @@ export default async function Page() {
   );
 }
 
-/* Understanding the sql results
+/* Understanding the previous sql results
   console.log(revenue) // Here is the return from the database: 
     [
       { month: 'Jan', revenue: 2000 },
