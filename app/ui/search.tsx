@@ -13,6 +13,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     console.log(`Searching... ${term}`);
     const params = new URLSearchParams(searchParams);
 
+    params.set('page', '1');
     if (term) {
       params.set('query', term);
     } else {
@@ -40,7 +41,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
 }
 
 /* Notes
-  Because this is a client component, the console logs show up in the client and not on the npm run dev. ...Which goes to confirm for a student the difference between a client and server components. 
-  I can actually replace 'query' by what I want, it's just a key. But just in case, I won't do it... now. 
-  So, what we're doing here is from the client's input, we're updating the URL, and as the URL is updated we capture the params from the URL, so that the server component can make the request to the server, not the client one. 
+  Because this is a client component, the console logs show up in the client and not on the npm run dev. ...Which goes to confirm for a student the difference between client and server components. 
+  I can actually replace 'query' by what I want, it's just a key. But just in case, I won't do it... now. (Google uses 'q' instead.)
+  So, what we're doing here is from the client's input, we're updating the URL, and as the URL is updated we capture the params from the URL, so that the parent server component can make the request to the server, not the child client one. 
+  With params.toString(), params are organized in their order of creation.
 */

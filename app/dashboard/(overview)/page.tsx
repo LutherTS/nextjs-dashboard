@@ -12,7 +12,7 @@ import CardWrapper from '@/app/ui/dashboard/cards'
 export default async function Page() {
   return (
     <main>
-      {/* Keeping -mt-2 in mind... For now. */}
+      {/* Keeping -mt-2 in mind... Implemented. */}
       <h1 className={`${lusitana.className} mb-4 -mt-2 text-xl md:text-2xl`}>
         Dashboard
       </h1>
