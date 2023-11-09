@@ -23,11 +23,12 @@ const links = [
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
-  { 
-    name: 'Customers', 
-    href: '/dashboard/customers', 
-    icon: UserGroupIcon 
-  },
+  // Commenting out because not made in the course. 
+  // { 
+  //   name: 'Customers', 
+  //   href: '/dashboard/customers', 
+  //   icon: UserGroupIcon 
+  // },
   { 
     name: 'Create Invoice', 
     href: '/dashboard/invoices/create', 
