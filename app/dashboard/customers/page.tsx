@@ -27,7 +27,9 @@ export default async function Page({
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
         {/* Added -mt-2 here too. */}
-        <h1 className={`${lusitana.className} mt-2 text-2xl`}>Customers</h1>
+        <h1 className={`${lusitana.className} text-xl mt-2 md:text-2xl`}>
+          Customers
+        </h1>
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search customers..." />
