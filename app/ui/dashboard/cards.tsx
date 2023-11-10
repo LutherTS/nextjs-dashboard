@@ -55,7 +55,6 @@ export function Card({
         <h3 className="ml-2 text-sm font-medium">{title}</h3>
       </div>
       <p
-      // Changed py-8 to py-6 to remove negative margins down the line. 
         className={`${lusitana.className}
           truncate rounded-xl bg-white px-4 py-4 text-center text-2xl`}
       >

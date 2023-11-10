@@ -16,6 +16,9 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!invoice) {
     notFound();
+    // Which fixed the 
+      // @ts-ignore // Something something undefined. 
+    // issue I had on invoice={invoice}. 
   }
 
   return (
@@ -31,7 +34,6 @@ export default async function Page({ params }: { params: { id: string } }) {
         ]}
       />
       <Form 
-        // @ts-ignore // Something something undefined. 
         invoice={invoice} 
         customers={customers} 
       />

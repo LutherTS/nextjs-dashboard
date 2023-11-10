@@ -26,7 +26,6 @@ export default async function Page({
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
-        {/* Added -mt-2 here too. */}
         <h1 className={`${lusitana.className} text-xl mt-2 md:text-2xl`}>
           Customers
         </h1>

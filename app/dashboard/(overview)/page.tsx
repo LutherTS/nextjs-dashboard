@@ -2,12 +2,12 @@
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
+// import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 // import { CardWrapper } from '@/app/ui/dashboard/cards';
-import CardWrapper from '@/app/ui/dashboard/cards'
 // Since it's default, it's not inside an object.
+import CardWrapper from '@/app/ui/dashboard/cards'
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <main>
-      {/* Keeping -mt-2 in mind... Implemented. */}
       <h1 className={`${lusitana.className} mb-4 text-xl mt-2 md:text-2xl`}>
         Dashboard
       </h1>
