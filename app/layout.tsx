@@ -22,7 +22,10 @@ export default function RootLayout({
       {/* tests for dark mode
         dark:bg-gray-950 
       */}
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased
+      dark:bg-gray-950`}>
+        {children}
+      </body>
     </html>
   );
 }
