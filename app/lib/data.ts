@@ -171,6 +171,25 @@ export async function fetchInvoicesPages(query: string) {
   }
 }
 
+export async function fetchCustomersPages(query: string) {
+  noStore()
+  
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM customers
+    WHERE
+      name ILIKE ${`%${query}%`} OR
+      email ILIKE ${`%${query}%`}
+  `;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch total number of invoices.');
+  }
+}
+
 export async function fetchInvoiceById(id: string) {
   noStore()
 
@@ -215,7 +234,14 @@ export async function fetchCustomers() {
   }
 }
 
-export async function fetchFilteredCustomers(query: string) {
+export async function fetchFilteredCustomers(
+  query: string,
+  currentPage: number
+  ) {
+    noStore()
+
+    const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
   try {
     const data = await sql<CustomersTable>`
 		SELECT
@@ -233,6 +259,7 @@ export async function fetchFilteredCustomers(query: string) {
         customers.email ILIKE ${`%${query}%`}
 		GROUP BY customers.id, customers.name, customers.email, customers.image_url
 		ORDER BY customers.name ASC
+    LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
 	  `;
 
     const customers = data.rows.map((customer) => ({

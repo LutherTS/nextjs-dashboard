@@ -19,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* tests for dark mode
+        dark:bg-gray-950 
+      */}
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );

@@ -127,6 +127,7 @@ export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
 ) {
+  console.log(prevState)
 
   try {
     await signIn('credentials', Object.fromEntries(formData));
