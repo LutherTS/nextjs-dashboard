@@ -10,15 +10,20 @@ import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/a
 import CardWrapper from '@/app/ui/dashboard/cards'
 import { Metadata } from 'next';
 
+import { auth } from '@/auth'
+
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
 
 export default async function Page() {
+  const session = await auth()
+
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl mt-2 md:text-2xl`}>
-        Dashboard
+        {/* Dashboard */}
+        Hello {session?.user?.name}, and welcome to your Dashboard.
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Suspense fallback={<CardsSkeleton />}>
@@ -53,6 +58,7 @@ export default async function Page() {
       { month: 'Nov', revenue: 3000 },
       { month: 'Dec', revenue: 4800 }
     ]
+
   console.log(latestInvoices) // Here is the return from the database:
     [
       {
@@ -91,12 +97,31 @@ export default async function Page() {
         id: 'a4343ba6-83c2-4d1e-83c9-b3016a6ad201'
       }
     ]
+
   console.log(numberOfCustomers) // Here is the return from the database: 
     10
+
   console.log(numberOfInvoices) // Here is the return from the database: 
     15
+
   console.log(totalPaidInvoices) // Here is the return from the database: 
     $1,185.16
+
   console.log(totalPendingInvoices) // Here is the return from the database: 
     $1,256.32
+
+  console.log(session) // IT WORKS!!! // Here's the result from NextAuth:
+    {
+      user: { 
+        name: 'User', 
+        email: 'user@nextmail.com' 
+      },
+      expires: '2023-12-10T15:53:53.262Z'
+    }
+  And so now we could do something like: 
+  if (session.user.username === URLparams user) {
+    can access the page
+  } else {
+    redirect to /users/user
+  }
 */
