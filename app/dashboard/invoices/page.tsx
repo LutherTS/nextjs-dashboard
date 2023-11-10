@@ -38,8 +38,16 @@ export default async function Page({
         <Table query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
-        <Pagination totalPages={totalPages} />
+        {/* <Pagination totalPages={totalPages} /> */}
+        {(totalPages > 0) && <Pagination totalPages={totalPages} />}
       </div>
+      {(totalPages === 0) && (
+        <div
+          className="mt-2 text-sm text-center text-red-500"
+        >
+          <p>No results found.</p>
+        </div>
+      )}
     </div>
   );
 }

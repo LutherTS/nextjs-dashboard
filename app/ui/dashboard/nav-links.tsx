@@ -18,17 +18,17 @@ const links = [
     href: '/dashboard', 
     icon: HomeIcon 
   },
+  // Now made by myself. 
+  { 
+    name: 'Customers', 
+    href: '/dashboard/customers', 
+    icon: UserGroupIcon 
+  },
   {
     name: 'Invoices',
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
-  // Commenting out because not made in the course. 
-  // { 
-  //   name: 'Customers', 
-  //   href: '/dashboard/customers', 
-  //   icon: UserGroupIcon 
-  // },
   { 
     name: 'Create Invoice', 
     href: '/dashboard/invoices/create', 

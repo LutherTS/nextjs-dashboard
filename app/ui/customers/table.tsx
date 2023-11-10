@@ -6,10 +6,12 @@ import { fetchFilteredCustomers } from '@/app/lib/data';
 
 export default async function CustomersTable({
   query,
+  currentPage,
 }: {
   query: string;
+  currentPage: number;
 }) {
-  const customers = await fetchFilteredCustomers(query);
+  const customers = await fetchFilteredCustomers(query, currentPage);
 
   return (
     <div className="w-full">
