@@ -18,7 +18,7 @@ export async function fetchRevenue() {
 
   try {
     // Artificially delay a reponse for demo purposes.
-    // Don't do this in real life :)
+    // Don't do this in real life. :)
 
     // console.log('Fetching revenue data...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -39,7 +39,7 @@ export async function fetchLatestInvoices() {
 
   try {
     // Artificially delay a reponse for demo purposes.
-    // Don't do this in real life :)
+    // Don't do this in real life. :)
 
     // console.log('Fetching invoices data...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -70,7 +70,7 @@ export async function fetchCardData() {
   try {
 
     // Artificially delay a reponse for demo purposes.
-    // Don't do this in real life :)
+    // Don't do this in real life. :)
 
     // console.log('Fetching cards data...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));

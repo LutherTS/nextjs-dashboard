@@ -15,14 +15,13 @@ export default function Breadcrumbs({
 }) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6 block">
-      {/* Added -mt-2 here too. */}
       <ol className={clsx(lusitana.className, 'flex text-xl mt-2 md:text-2xl')}>
         {breadcrumbs.map((breadcrumb, index) => (
           <li
             key={breadcrumb.href}
             aria-current={breadcrumb.active}
             className={clsx(
-              breadcrumb.active ? 'text-gray-900' : 'text-gray-500',
+              breadcrumb.active ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-500',
             )}
           >
             <Link 
