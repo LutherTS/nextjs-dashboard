@@ -27,7 +27,8 @@ export default async function Page({
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
-        <h1 className={`${lusitana.className} text-xl mt-2 md:text-2xl`}>
+        <h1 className={`${lusitana.className} text-xl mt-2 md:text-2xl
+        dark:text-white`}>
           Invoices
         </h1>
       </div>

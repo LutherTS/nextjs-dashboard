@@ -26,7 +26,7 @@ export default async function LatestInvoices() {
         {/* NOTE: comment in this code when you get to this point in the course */}
 
         <div className="bg-white px-6
-        dark:bg-gray-100">
+        dark:bg-gray-100 rounded-md">
           {latestInvoices.map((invoice, i) => {
             return (
               <div
