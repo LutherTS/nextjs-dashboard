@@ -16,7 +16,7 @@ export default async function InvoicesTable({
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0
+        <div className="rounded-md bg-gray-50 p-2 md:pt-0
         dark:bg-gray-800">
           <div className="md:hidden">
             {invoices?.map((invoice) => (
@@ -55,9 +55,12 @@ export default async function InvoicesTable({
               </div>
             ))}
           </div>
-          <table className="hidden min-w-full text-gray-900 md:table">
-            <thead className="rounded-lg text-left text-sm font-normal
-            dark:text-white">
+          <table className="hidden min-w-full rounded-md text-gray-900 md:table">
+            {/* Replacing className, here are the originals:
+            rounded-md text-left text-sm font-normal
+            dark:text-white */}
+            <thead className="rounded-md bg-gray-50 text-left text-sm font-normal
+            dark:bg-gray-800 dark:text-white">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
                   Customer
@@ -79,15 +82,16 @@ export default async function InvoicesTable({
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white
-            dark:text-black dark:bg-gray-100 rounded-md">
+            {/* Replacing className, here are the originals:
+            bg-white
+            dark:text-black dark:bg-gray-100 rounded-md */}
+            <tbody className="divide-y divide-gray-200 text-gray-900">
               {invoices?.map((invoice) => (
-                <tr
-                  key={invoice.id} 
-                  className="group
-                  w-full border-b py-5 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
-                >
-                  <td className="whitespace-nowrap py-5 pl-6 pr-3">
+                <tr key={invoice.id} className="group">
+                  {/* Fixed rounded with ss and es */}
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
+                  group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md
+                  sm:pl-6">
                     <div className="flex items-center gap-3">
                       {/* Bigging images from 28 to 38 to equate the heights. */}
                       <Image
@@ -100,19 +104,21 @@ export default async function InvoicesTable({
                       <p>{invoice.name}</p>
                     </div>
                   </td>
-                  <td className="whitespace-nowrap px-3 py-5">
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
                     {invoice.email}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-5">
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
                     {formatCurrency(invoice.amount)}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-5">
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
                     {formatDateToLocal(invoice.date)}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-5">
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
                     <InvoiceStatus status={invoice.status} />
                   </td>
-                  <td className="whitespace-nowrap py-5 pl-6 pr-3">
+                  {/* Fixed rounded with se and ee */}
+                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
+                  group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md">
                     <div className="flex justify-end gap-3">
                       <UpdateInvoice id={invoice.id} />
                       <DeleteInvoice id={invoice.id} />
@@ -131,4 +137,45 @@ export default async function InvoicesTable({
 /* Notes
 The reason why fetchFilteredInvoices(query, currentPage) gets called on pagination for example without me having to do anything is because every time the URL is changed either with replace(`${pathname}?${params.toString()}`) in Search or with createPageURL and its return `${pathname}?${params.toString()}` in pagination, it makes a new call to the server. 
 However, while the request to the server is distinguished from the navigation in the client, which it is done on the client side because the initiators of this navigation, Search and Pagination, are client side components.
+*/
+
+/* Old blocks of code
+<tr
+  key={invoice.id} 
+  // Removing none showing code below: 
+  // [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg
+  className="group
+  w-full border-b py-5 text-sm last-of-type:border-none"
+>
+  <td className="whitespace-nowrap py-5 pl-6 pr-3">
+    <div className="flex items-center gap-3">
+      <Image
+        src={invoice.image_url}
+        className="rounded-full"
+        width={38}
+        height={38}
+        alt={`${invoice.name}'s profile picture`}
+      />
+      <p>{invoice.name}</p>
+    </div>
+  </td>
+  <td className="whitespace-nowrap px-3 py-5">
+    {invoice.email}
+  </td>
+  <td className="whitespace-nowrap px-3 py-5">
+    {formatCurrency(invoice.amount)}
+  </td>
+  <td className="whitespace-nowrap px-3 py-5">
+    {formatDateToLocal(invoice.date)}
+  </td>
+  <td className="whitespace-nowrap px-3 py-5">
+    <InvoiceStatus status={invoice.status} />
+  </td>
+  <td className="whitespace-nowrap py-5 pl-6 pr-3">
+    <div className="flex justify-end gap-3">
+      <UpdateInvoice id={invoice.id} />
+      <DeleteInvoice id={invoice.id} />
+    </div>
+  </td>
+</tr>
 */

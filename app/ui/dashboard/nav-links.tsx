@@ -49,9 +49,12 @@ export default function NavLinks() {
             href={link.href}
             // Personally added transitions.
             className={clsx(
-              "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 transition transition-duration-[50ms] md:flex-none md:justify-start md:p-2 md:px-3 dark:bg-gray-800 dark:text-white",
+              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3",
               {
                 'bg-sky-100 text-blue-600 hover:text-blue-700 transition transition-duration-200 dark:bg-sky-100 dark:text-[#2F6FEB] dark:hover:text-blue-700': pathname === link.href,
+              },
+              {
+                'bg-gray-50 hover:bg-sky-100 hover:text-blue-600 transition transition-duration-[50ms] dark:bg-gray-800 dark:text-white': pathname !== link.href,
               },
             )}
           >
@@ -63,3 +66,9 @@ export default function NavLinks() {
     </>
   );
 }
+
+/* Troubleshooting
+No matter what class I put in there (dark:text-[#2F6FEB]), it just gets overridden. 
+Original class:
+"flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 transition transition-duration-[50ms] md:flex-none md:justify-start md:p-2 md:px-3 dark:bg-gray-800 dark:text-white",
+*/
