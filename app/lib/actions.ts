@@ -12,7 +12,9 @@ const InvoiceSchema = z.object({
     invalid_type_error: 'Please select a customer.'
   }),
   amount: z.coerce
-    .number()
+    .number({
+      invalid_type_error: 'Please enter a number.'
+    })
     .gt(0, { message: 'Please enter an amount greater than $0.' })
     .multipleOf(0.01, { message: 'Please enter an amount that is currency-friendly.' }),
   status: z.enum(['pending', 'paid'], {
