@@ -23,3 +23,9 @@ export default function LoginPage() {
     </main>
   );
 }
+
+/* Notes
+Aborting page register. The idea of this app is designed for a single user.
+However...
+I could contemplate adding customers. But then that would require adapting the revenue page... But no, since it's already explicitly representational only. (I even wront it on the dashboard page.)
+*/
