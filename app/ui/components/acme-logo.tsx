@@ -11,7 +11,3 @@ export default function AcmeLogo() {
     </div>
   );
 }
-
-/* Notes
-Still need to know why tsconfig.json needs that file at that location.
-*/
