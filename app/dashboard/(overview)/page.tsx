@@ -1,13 +1,13 @@
 // import { Card } from '@/app/ui/dashboard/cards';
-import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+import RevenueChart from '@/app/ui/components/dashboard/(overview)/revenue-chart';
+import LatestInvoices from '@/app/ui/components/dashboard/(overview)/latest-invoices';
 import { lusitana } from '@/app/ui/fonts';
 // import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
-import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
+import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/components/skeletons';
 // import { CardWrapper } from '@/app/ui/dashboard/cards';
 // Since it's default, it's not inside an object.
-import CardWrapper from '@/app/ui/dashboard/cards'
+import CardWrapper from '@/app/ui/components/dashboard/(overview)/cards'
 import { Metadata } from 'next';
 
 import { auth } from '@/auth'

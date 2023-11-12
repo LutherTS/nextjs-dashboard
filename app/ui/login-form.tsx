@@ -62,7 +62,8 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
-        <div className="flex h-8 items-end space-x-1">
+        {/* Replacing h-8 by mt-4 */}
+        <div className="flex mt-4 items-end space-x-1">
           {/* Add form errors here */}
           {code === 'CredentialSignin' && (
             <>
@@ -79,7 +80,10 @@ export default function LoginForm() {
 }
 
 function LoginButton() {
-  const { pending } = useFormStatus();
+  // Trying to read the form data being submitted
+  // https://react.dev/reference/react-dom/hooks/useFormStatus#read-form-data-being-submitted 
+  const { pending, data } = useFormStatus();
+  console.log('useFormStatus().data', data)
 
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>
@@ -87,3 +91,11 @@ function LoginButton() {
     </Button>
   );
 }
+
+/* Notes
+Still need to show form validation issues here.
+I should get inspired from where Invalid credentials show up.
+(For which I'll remove the period since it's prefixed by an emote.)
+But it's not that useful, and neither is useFormStatus().data. The former because it's a login form and everybody knows that both the email and password are required, the later because the button is already disabled by pending, letting the user know that something is indeed going on after input.
+Same for the <sup>*</sup> I had added. If all the fiels are mandatory, it is not really efficient to specify that they all are.
+*/

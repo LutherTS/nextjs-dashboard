@@ -16,3 +16,8 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Notes
+Because here I'm using two CSS solutions, I would and could have made a CSS folder with...
+Actually, and that's how I'll do it in my own project, in every case where I feel like there could be a different use of the same concept, just like the app route does, I will be making a folder. So with that understand, I'm not gonna change the file structure here, only on my own project.
+*/
