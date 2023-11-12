@@ -9,7 +9,8 @@ export default function SideNav() {
 
   return (
     // Replaced md:px-2 by md:px-4
-    <div className="flex h-full flex-col px-3 py-4 md:px-4">
+    // Now trying px-4 on mobile
+    <div className="flex h-full flex-col px-4 py-4 md:px-4">
       <Link
         className="mb-2 flex h-20 items-end justify-start rounded-md bg-blue-600 p-4 md:h-40"
         href="/"
