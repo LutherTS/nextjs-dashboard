@@ -1,6 +1,6 @@
-import Pagination from '@/app/ui/components/dashboard/pagination';
-import Search from '@/app/ui/components/dashboard/search';
 import { InvoicesTableSkeleton } from '@/app/ui/components/dashboard/skeletons';
+import Search from '@/app/ui/components/dashboard/search';
+import Pagination from '@/app/ui/components/dashboard/pagination';
 import Table from '@/app/ui/components/dashboard/customers/table';
 import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';

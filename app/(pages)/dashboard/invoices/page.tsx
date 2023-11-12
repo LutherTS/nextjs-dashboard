@@ -1,6 +1,6 @@
+import { InvoicesTableSkeleton } from '@/app/ui/components/dashboard/skeletons';
 import Search from '@/app/ui/components/dashboard/search';
 import Pagination from '@/app/ui/components/dashboard/pagination';
-import { InvoicesTableSkeleton } from '@/app/ui/components/dashboard/skeletons';
 import { CreateInvoice } from '@/app/ui/components/dashboard/invoices/buttons';
 import Table from '@/app/ui/components/dashboard/invoices/table';
 import { lusitana } from '@/app/ui/fonts';

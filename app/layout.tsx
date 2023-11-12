@@ -25,3 +25,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// The equivalent to Webflow's "Body (All Pages)" tag.

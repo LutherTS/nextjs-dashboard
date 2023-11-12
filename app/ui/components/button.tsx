@@ -38,4 +38,6 @@ Then, I would even have made an overview folder, which I would even have called 
 // revenue-chart.tsx
 
 (Which now makes me really want to change the structure as an exercice and to really make this project my own. And instead of moving files I'm just going to duplicate them in the new folder.)
+
+ALL DONE.
 */

@@ -1,7 +1,8 @@
 import Breadcrumbs from '@/app/ui/components/dashboard/invoices/breadcrumbs';
 import Form from '@/app/ui/components/dashboard/invoices/edit-form';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
-import { notFound } from 'next/navigation';import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Edit Invoice',
