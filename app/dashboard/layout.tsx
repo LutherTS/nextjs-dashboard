@@ -6,8 +6,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full flex-none md:w-64">
         <SideNav />
       </div>
-      {/* Modifying the padding on md: from md:p-12. */}
-      <div className="flex-grow p-6 md:overflow-y-auto md:px-12">{children}</div>
+      {/* Modifying the padding on md: from md:p-12
+      Going for a p-4 on mobile instead of p-6 */}
+      <div className="flex-grow px-4 pb-8 md:overflow-y-auto md:py-6 md:px-12">{children}</div>
     </div>
   );
 }
