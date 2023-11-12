@@ -73,6 +73,11 @@ const customers = [
   },
 ];
 
+// I get in now, when it says image_url: '/customers/balazs-orban.png', it means to go look for the image at the path /public/customers/balazs-orban.png. And therefore that's where the images come from. At this time they're not in the database, they're inside the project itself. 
+// I guess I'll have to learn too, but in reality that's what image (and video) hosting their own repositories, like https://i.ytimg.com/ with https://i.ytimg.com/vi/ and https://i.ytimg.com/an_webp/. 
+// The good things, my first Next.js project will not require any external images in line with its own vision, so it's something I'll be able to learn at a later opportunity.
+// (And so that's why images tend to always load the last on a page, because their orders are first fetched from the database like anything else, and then on to of it fetched from another database.) 
+
 const invoices = [
   {
     customer_id: customers[0].id,
