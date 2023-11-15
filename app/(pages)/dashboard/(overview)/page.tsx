@@ -26,7 +26,7 @@ export default async function Page() {
   return (
     <main>
       <h1
-        className={`${lusitana.className} mb-4 text-xl mt-2 md:text-2xl dark:text-white`}
+        className={`${lusitana.className} mb-4 mt-2 text-xl dark:text-white md:text-2xl`}
       >
         {/* Dashboard */}
         Hello {session?.user?.name}, and welcome to your Dashboard.
