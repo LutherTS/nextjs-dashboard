@@ -8,6 +8,9 @@ export const authConfig = {
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
+      // So this syntax is to know the truth of auth?.user,
+      // so that instead of getting pretty much the result of auth.user,
+      // it obtains whether auth.user does exist (true) or not (false).
       const protectedPaths = ['/dashboard', '/customers', '/invoices'];
       const isProtectedPath = protectedPaths.some((path) =>
         nextUrl.pathname.startsWith(path),
