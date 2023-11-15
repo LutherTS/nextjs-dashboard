@@ -1,25 +1,27 @@
-'use client';
+"use client";
 
-import { Button } from '@/app/ui/components/button';
-import { CustomerField } from '@/app/lib/definitions';
-import Link from 'next/link';
+import { Button } from "@/app/ui/components/button";
+import { CustomerField } from "@/app/lib/definitions";
+import Link from "next/link";
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from '@heroicons/react/24/outline';
-import { createInvoice } from '@/app/lib/actions';
-import { useFormState } from 'react-dom';
+} from "@heroicons/react/24/outline";
+import { createInvoice } from "@/app/lib/actions";
+import { useFormState } from "react-dom";
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
-  const [state, dispatch] = useFormState(createInvoice, initialState)
+  const [state, dispatch] = useFormState(createInvoice, initialState);
 
   return (
     <form action={dispatch}>
-      <div className="rounded-md bg-gray-50 p-4 md:p-6
-      dark:bg-gray-800 dark:text-white">
+      <div
+        className="rounded-md bg-gray-50 p-4 md:p-6
+      dark:bg-gray-800 dark:text-white"
+      >
         {/* Customer Name */}
         <div className="mb-4">
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
@@ -96,8 +98,10 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           <legend className="mb-2 block text-sm font-medium">
             Set the invoice status
           </legend>
-          <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3
-          dark:bg-gray-100">
+          <div
+            className="rounded-md border border-gray-200 bg-white px-[14px] py-3
+          dark:bg-gray-100"
+          >
             <div className="flex gap-4">
               <div className="flex items-center">
                 <input

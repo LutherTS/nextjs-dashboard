@@ -1,8 +1,11 @@
-import InvoiceStatus from '@/app/ui/components/dashboard/invoices/status';
-import { UpdateInvoice, DeleteInvoice } from '@/app/ui/components/dashboard/invoices/buttons';
-import Image from 'next/image';
-import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
-import { fetchFilteredInvoices } from '@/app/lib/data';
+import InvoiceStatus from "@/app/ui/components/dashboard/invoices/status";
+import {
+  UpdateInvoice,
+  DeleteInvoice,
+} from "@/app/ui/components/dashboard/invoices/buttons";
+import Image from "next/image";
+import { formatDateToLocal, formatCurrency } from "@/app/lib/utils";
+import { fetchFilteredInvoices } from "@/app/lib/data";
 
 export default async function InvoicesTable({
   query,
@@ -16,8 +19,10 @@ export default async function InvoicesTable({
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-md bg-gray-50 p-2 md:pt-0
-        dark:bg-gray-800">
+        <div
+          className="rounded-md bg-gray-50 p-2 md:pt-0
+        dark:bg-gray-800"
+        >
           <div className="md:hidden">
             {invoices?.map((invoice) => (
               <div
@@ -59,8 +64,10 @@ export default async function InvoicesTable({
             {/* Replacing className, here are the originals:
             rounded-md text-left text-sm font-normal
             dark:text-white */}
-            <thead className="rounded-md bg-gray-50 text-left text-sm font-normal
-            dark:bg-gray-800 dark:text-white">
+            <thead
+              className="rounded-md bg-gray-50 text-left text-sm font-normal
+            dark:bg-gray-800 dark:text-white"
+            >
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
                   Customer
@@ -89,9 +96,11 @@ export default async function InvoicesTable({
               {invoices?.map((invoice) => (
                 <tr key={invoice.id} className="group">
                   {/* Fixed rounded with ss and es */}
-                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
+                  <td
+                    className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
                   group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md
-                  sm:pl-6">
+                  sm:pl-6"
+                  >
                     <div className="flex items-center gap-3">
                       {/* Bigging images from 28 to 38 to equate the heights. */}
                       <Image
@@ -117,8 +126,10 @@ export default async function InvoicesTable({
                     <InvoiceStatus status={invoice.status} />
                   </td>
                   {/* Fixed rounded with se and ee */}
-                  <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
-                  group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md">
+                  <td
+                    className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
+                  group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md"
+                  >
                     <div className="flex justify-end gap-3">
                       <UpdateInvoice id={invoice.id} />
                       <DeleteInvoice id={invoice.id} />

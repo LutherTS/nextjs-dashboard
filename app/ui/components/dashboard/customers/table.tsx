@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image from "next/image";
 // import { lusitana } from '@/app/ui/fonts';
 // import Search from '@/app/ui/search';
 // import { CustomersTable, FormattedCustomersTable } from '@/app/lib/definitions';
-import { fetchFilteredCustomers } from '@/app/lib/data';
+import { fetchFilteredCustomers } from "@/app/lib/data";
 
 export default async function CustomersTable({
   query,
@@ -22,8 +22,10 @@ export default async function CustomersTable({
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden rounded-md bg-gray-50  p-2 md:pt-0
-            dark:bg-gray-800">
+            <div
+              className="overflow-hidden rounded-md bg-gray-50  p-2 md:pt-0
+            dark:bg-gray-800"
+            >
               <div className="md:hidden">
                 {customers?.map((customer) => (
                   <div
@@ -66,8 +68,10 @@ export default async function CustomersTable({
                 ))}
               </div>
               <table className="hidden min-w-full rounded-md text-gray-900 md:table">
-                <thead className="rounded-md bg-gray-50 text-left text-sm font-normal
-                dark:bg-gray-800 dark:text-white">
+                <thead
+                  className="rounded-md bg-gray-50 text-left text-sm font-normal
+                dark:bg-gray-800 dark:text-white"
+                >
                   <tr>
                     <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
                       Name
@@ -92,9 +96,11 @@ export default async function CustomersTable({
                     // first:rounded-t-md last:rounded-b-md nice try
                     <tr key={customer.id} className="group">
                       {/* Fixed rounded with ss and es */}
-                      <td className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
+                      <td
+                        className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
                       group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md
-                      sm:pl-6">
+                      sm:pl-6"
+                      >
                         <div className="flex items-center gap-3">
                           {/* Bigging images from 28 to 38 to equate the heights. */}
                           <Image
@@ -117,8 +123,10 @@ export default async function CustomersTable({
                         {customer.total_pending}
                       </td>
                       {/* Fixed rounded with se and ee */}
-                      <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
-                      group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md">
+                      <td
+                        className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
+                      group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md"
+                      >
                         {customer.total_paid}
                       </td>
                     </tr>
