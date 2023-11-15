@@ -49,23 +49,16 @@ export function Card({
   const Icon = iconMap[type];
 
   return (
-    <div
-      className="rounded-xl bg-gray-50 p-2 shadow-sm
-    dark:bg-gray-800 dark:text-white"
-    >
+    <div className="rounded-xl bg-gray-50 p-2 shadow-sm dark:bg-gray-800 dark:text-white">
       <div className="flex p-4">
         {Icon ? (
-          <Icon
-            className="h-5 w-5 text-gray-700
-        dark:text-gray-200"
-          />
+          <Icon className="h-5 w-5 text-gray-700 dark:text-gray-200" />
         ) : null}
         <h3 className="ml-2 text-sm font-medium">{title}</h3>
       </div>
       <p
         className={`${lusitana.className}
-          truncate rounded-xl bg-white px-4 py-4 text-center text-2xl
-          dark:text-black`}
+          truncate rounded-xl bg-white px-4 py-4 text-center text-2xl dark:text-black`}
       >
         {value}
       </p>
