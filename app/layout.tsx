@@ -29,3 +29,4 @@ export default function RootLayout({
 }
 
 // The equivalent to Webflow's "Body (All Pages)" tag.
+// 18:10, 2023-11-15: Everything seems to be working just fine.
