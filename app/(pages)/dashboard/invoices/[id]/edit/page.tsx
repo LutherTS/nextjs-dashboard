@@ -1,10 +1,11 @@
-import Breadcrumbs from '@/app/ui/components/dashboard/invoices/breadcrumbs';
-import Form from '@/app/ui/components/dashboard/invoices/edit-form';
-import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
-import { notFound } from 'next/navigation';import { Metadata } from 'next';
+import Breadcrumbs from "@/app/ui/components/dashboard/invoices/breadcrumbs";
+import Form from "@/app/ui/components/dashboard/invoices/edit-form";
+import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Edit Invoice',
+  title: "Edit Invoice",
 };
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -16,27 +17,24 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!invoice) {
     notFound();
-    // Which fixed the 
-      // @ts-ignore // Something something undefined. 
-    // issue I had on invoice={invoice}. 
+    // Which fixed the
+    // @ts-ignore // Something something undefined.
+    // issue I had on invoice={invoice}.
   }
 
   return (
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: 'Invoices', href: '/dashboard/invoices' },
+          { label: "Invoices", href: "/dashboard/invoices" },
           {
-            label: 'Edit Invoice',
+            label: "Edit Invoice",
             href: `/dashboard/invoices/${id}/edit`,
             active: true,
           },
         ]}
       />
-      <Form 
-        invoice={invoice} 
-        customers={customers} 
-      />
+      <Form invoice={invoice} customers={customers} />
     </main>
   );
 }

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { Button } from '@/app/ui/components/button';
-import { lusitana } from '@/app/ui/fonts';
+import { Button } from "@/app/ui/components/button";
+import { lusitana } from "@/app/ui/fonts";
 import {
   AtSymbolIcon,
   KeyIcon,
   ExclamationCircleIcon,
-} from '@heroicons/react/24/outline';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { useFormState, useFormStatus } from 'react-dom';
-import { authenticate } from '@/app/lib/actions';
+} from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { useFormState, useFormStatus } from "react-dom";
+import { authenticate } from "@/app/lib/actions";
 
 export default function LoginForm() {
   const [code, action] = useFormState(authenticate, undefined);
@@ -63,9 +63,9 @@ export default function LoginForm() {
         </div>
         <LoginButton />
         {/* Replacing h-8 by mt-4 */}
-        <div className="flex mt-4 items-end space-x-1">
+        <div className="mt-4 flex items-end space-x-1">
           {/* Add form errors here */}
-          {code === 'CredentialSignin' && (
+          {code === "CredentialSignin" && (
             <>
               <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
               <p aria-live="polite" className="text-sm text-red-500">
@@ -81,9 +81,9 @@ export default function LoginForm() {
 
 function LoginButton() {
   // Trying to read the form data being submitted
-  // https://react.dev/reference/react-dom/hooks/useFormStatus#read-form-data-being-submitted 
+  // https://react.dev/reference/react-dom/hooks/useFormStatus#read-form-data-being-submitted
   const { pending, data } = useFormStatus();
-  console.log('useFormStatus().data', data)
+  console.log("useFormStatus().data", data);
 
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>

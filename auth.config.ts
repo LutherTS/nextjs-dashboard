@@ -1,14 +1,17 @@
-import type { NextAuthConfig } from 'next-auth';
- 
+import type { NextAuthConfig } from "next-auth";
+
 export const authConfig = {
   providers: [],
   pages: {
-    signIn: '/login',
+    signIn: "/login",
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const protectedPaths = ['/dashboard', '/customers', '/invoices'];
+      // So this syntax is to know the truth of auth?.user,
+      // so that instead of getting pretty much the result of auth.user,
+      // it obtains whether auth.user does exist (true) or not (false).
+      const protectedPaths = ["/dashboard", "/customers", "/invoices"];
       const isProtectedPath = protectedPaths.some((path) =>
         nextUrl.pathname.startsWith(path),
       );
@@ -17,7 +20,7 @@ export const authConfig = {
         if (isLoggedIn) return true;
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
-        return Response.redirect(new URL('/dashboard', nextUrl));
+        return Response.redirect(new URL("/dashboard", nextUrl));
       }
       return true;
     },
