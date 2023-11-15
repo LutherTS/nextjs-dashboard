@@ -1,28 +1,33 @@
-import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/components/dashboard/skeletons';
+import {
+  RevenueChartSkeleton,
+  LatestInvoicesSkeleton,
+  CardsSkeleton,
+} from "@/app/ui/components/dashboard/skeletons";
 // import { Card } from '@/app/ui/dashboard/cards';
 // import { CardWrapper } from '@/app/ui/dashboard/cards';
 // Since it's default, it's not inside an object.
-import CardWrapper from '@/app/ui/components/dashboard/(overview)/cards'
-import RevenueChart from '@/app/ui/components/dashboard/(overview)/revenue-chart';
-import LatestInvoices from '@/app/ui/components/dashboard/(overview)/latest-invoices';
-import { lusitana } from '@/app/ui/fonts';
-import { Suspense } from 'react';
-import { Metadata } from 'next';
+import CardWrapper from "@/app/ui/components/dashboard/(overview)/cards";
+import RevenueChart from "@/app/ui/components/dashboard/(overview)/revenue-chart";
+import LatestInvoices from "@/app/ui/components/dashboard/(overview)/latest-invoices";
+import { lusitana } from "@/app/ui/fonts";
+import { Suspense } from "react";
+import { Metadata } from "next";
 // import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 
-import { auth } from '@/auth'
+import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
+  title: "Dashboard",
 };
 
 export default async function Page() {
-  
-  const session = await auth()
+  const session = await auth();
 
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl mt-2 md:text-2xl dark:text-white`}>
+      <h1
+        className={`${lusitana.className} mb-4 text-xl mt-2 md:text-2xl dark:text-white`}
+      >
         {/* Dashboard */}
         Hello {session?.user?.name}, and welcome to your Dashboard.
       </h1>

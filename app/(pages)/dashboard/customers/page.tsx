@@ -1,14 +1,14 @@
-import { InvoicesTableSkeleton } from '@/app/ui/components/dashboard/skeletons';
-import Search from '@/app/ui/components/dashboard/search';
-import Pagination from '@/app/ui/components/dashboard/pagination';
-import Table from '@/app/ui/components/dashboard/customers/table';
-import { lusitana } from '@/app/ui/fonts';
-import { Suspense } from 'react';
-import { fetchCustomersPages } from '@/app/lib/data';
-import { Metadata } from 'next';
+import { InvoicesTableSkeleton } from "@/app/ui/components/dashboard/skeletons";
+import Search from "@/app/ui/components/dashboard/search";
+import Pagination from "@/app/ui/components/dashboard/pagination";
+import Table from "@/app/ui/components/dashboard/customers/table";
+import { lusitana } from "@/app/ui/fonts";
+import { Suspense } from "react";
+import { fetchCustomersPages } from "@/app/lib/data";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Customers',
+  title: "Customers",
 };
 
 export default async function Page({
@@ -19,39 +19,36 @@ export default async function Page({
     page?: string;
   };
 }) {
-  const query = searchParams?.query || '';
+  const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchCustomersPages(query);
 
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
-        <h1 className={`${lusitana.className} text-xl mt-2 md:text-2xl
-        dark:text-white`}>
+        <h1
+          className={`${lusitana.className} mt-2 text-xl md:text-2xl
+        dark:text-white`}
+        >
           Customers
         </h1>
       </div>
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+      <div className="mt-4 flex justify-between items-center gap-2 md:mt-8">
         <Search placeholder="Search customers..." />
       </div>
-       <Suspense 
+      <Suspense
         // key={query}
-        key={query + currentPage} 
+        key={query + currentPage}
         fallback={<InvoicesTableSkeleton />}
       >
-        <Table 
-          query={query} 
-          currentPage={currentPage} 
-        />
+        <Table query={query} currentPage={currentPage} />
       </Suspense>
-      <div className="mt-5 flex w-full justify-center">
+      <div className="mt-5 flex justify-center w-full ">
         {/* <Pagination totalPages={totalPages} /> */}
-        {(totalPages > 0) && <Pagination totalPages={totalPages} />}
+        {totalPages > 0 && <Pagination totalPages={totalPages} />}
       </div>
-      {(totalPages === 0) && (
-        <div
-          className="mt-2 text-sm text-center text-red-500"
-        >
+      {totalPages === 0 && (
+        <div className="mt-2 text-sm text-center text-red-500">
           <p>No results found.</p>
         </div>
       )}
