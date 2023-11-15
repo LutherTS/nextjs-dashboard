@@ -112,7 +112,7 @@ export async function fetchCardData() {
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(
   query: string,
-  currentPage: number
+  currentPage: number,
 ) {
   noStore();
 
@@ -235,7 +235,7 @@ export async function fetchCustomers() {
 
 export async function fetchFilteredCustomers(
   query: string,
-  currentPage: number
+  currentPage: number,
 ) {
   noStore();
 

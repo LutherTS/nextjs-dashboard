@@ -9,7 +9,7 @@ export default function InvoiceStatus({ status }: { status: string }) {
         {
           "bg-gray-100 text-gray-500 dark:bg-white": status === "pending",
           "bg-green-500 text-white dark:bg-green-600": status === "paid",
-        }
+        },
       )}
     >
       {status === "pending" ? (

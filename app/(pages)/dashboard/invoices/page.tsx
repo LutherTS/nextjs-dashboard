@@ -28,8 +28,8 @@ export default async function Page({
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
         <h1
-          className={`${lusitana.className} text-xl mt-2 md:text-2xl
-        dark:text-white`}
+          className={`${lusitana.className} mt-2 text-xl dark:text-white
+        md:text-2xl`}
         >
           Invoices
         </h1>
@@ -46,7 +46,7 @@ export default async function Page({
         {totalPages > 0 && <Pagination totalPages={totalPages} />}
       </div>
       {totalPages === 0 && (
-        <div className="mt-2 text-sm text-center text-red-500">
+        <div className="mt-2 text-center text-sm text-red-500">
           <p>No results found.</p>
         </div>
       )}

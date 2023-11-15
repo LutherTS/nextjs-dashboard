@@ -80,7 +80,7 @@ const UpdateInvoice = InvoiceSchema.omit({ date: true, id: true });
 export async function updateInvoice(
   id: string,
   prevState: State,
-  formData: FormData
+  formData: FormData,
 ) {
   console.log("export async function updateInvoice", prevState);
 
@@ -132,7 +132,7 @@ export async function deleteInvoice(id: string) {
 
 export async function authenticate(
   prevState: string | undefined,
-  formData: FormData
+  formData: FormData,
 ) {
   console.log("export async function authenticate", prevState);
 

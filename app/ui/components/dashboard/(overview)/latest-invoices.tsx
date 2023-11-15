@@ -28,8 +28,8 @@ export default async function LatestInvoices() {
         {/* NOTE: comment in this code when you get to this point in the course */}
 
         <div
-          className="bg-white px-6
-        dark:bg-gray-100 rounded-md"
+          className="rounded-md bg-white
+        px-6 dark:bg-gray-100"
         >
           {latestInvoices.map((invoice, i) => {
             return (
@@ -39,7 +39,7 @@ export default async function LatestInvoices() {
                   "flex flex-row items-center justify-between py-4",
                   {
                     "border-t": i !== 0,
-                  }
+                  },
                 )}
               >
                 <div className="flex items-center">

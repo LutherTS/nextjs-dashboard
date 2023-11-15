@@ -42,12 +42,12 @@ export default async function RevenueChart() {
       dark:bg-gray-800"
       >
         <div
-          className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-4
-        dark:bg-gray-100"
+          className="mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 dark:bg-gray-100 sm:grid-cols-13
+        md:gap-4"
         >
           <div
-            className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex
-            dark:text-gray-500"
+            className="mb-6 hidden flex-col justify-between text-sm text-gray-400 dark:text-gray-500
+            sm:flex"
             style={{ height: `${chartHeight}px` }}
           >
             {yAxisLabels.map((label) => (
@@ -65,8 +65,8 @@ export default async function RevenueChart() {
                 }}
               ></div>
               <p
-                className="-rotate-90 text-sm text-gray-400 sm:rotate-0
-              dark:text-gray-500"
+                className="-rotate-90 text-sm text-gray-400 dark:text-gray-500
+              sm:rotate-0"
               >
                 {month.month}
               </p>

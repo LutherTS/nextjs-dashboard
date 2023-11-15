@@ -23,14 +23,14 @@ export default async function CustomersTable({
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full align-middle">
             <div
-              className="overflow-hidden rounded-md bg-gray-50  p-2 md:pt-0
-            dark:bg-gray-800"
+              className="overflow-hidden rounded-md bg-gray-50 p-2 dark:bg-gray-800
+            md:pt-0"
             >
               <div className="md:hidden">
                 {customers?.map((customer) => (
                   <div
                     key={customer.id}
-                    className="mb-2 w-full rounded-md bg-white dark:bg-gray-100 p-4"
+                    className="mb-2 w-full rounded-md bg-white p-4 dark:bg-gray-100"
                   >
                     <div className="flex items-center justify-between border-b pb-4">
                       <div>
@@ -97,8 +97,8 @@ export default async function CustomersTable({
                     <tr key={customer.id} className="group">
                       {/* Fixed rounded with ss and es */}
                       <td
-                        className="whitespace-nowrap bg-white dark:bg-gray-100 py-5 pl-4 pr-3 text-sm text-black 
-                      group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md
+                        className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-ss-md 
+                      group-last-of-type:rounded-es-md dark:bg-gray-100
                       sm:pl-6"
                       >
                         <div className="flex items-center gap-3">
@@ -113,19 +113,19 @@ export default async function CustomersTable({
                           <p>{customer.name}</p>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm dark:bg-gray-100">
                         {customer.email}
                       </td>
-                      <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm dark:bg-gray-100">
                         {customer.total_invoices}
                       </td>
-                      <td className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm">
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm dark:bg-gray-100">
                         {customer.total_pending}
                       </td>
                       {/* Fixed rounded with se and ee */}
                       <td
-                        className="whitespace-nowrap bg-white dark:bg-gray-100 px-4 py-5 text-sm 
-                      group-first-of-type:rounded-se-md group-last-of-type:rounded-ee-md"
+                        className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-se-md 
+                      group-last-of-type:rounded-ee-md dark:bg-gray-100"
                       >
                         {customer.total_paid}
                       </td>

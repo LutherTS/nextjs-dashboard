@@ -63,7 +63,7 @@ export default function LoginForm() {
         </div>
         <LoginButton />
         {/* Replacing h-8 by mt-4 */}
-        <div className="flex mt-4 items-end space-x-1">
+        <div className="mt-4 flex items-end space-x-1">
           {/* Add form errors here */}
           {code === "CredentialSignin" && (
             <>

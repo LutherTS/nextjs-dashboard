@@ -13,7 +13,7 @@ export const authConfig = {
       // it obtains whether auth.user does exist (true) or not (false).
       const protectedPaths = ["/dashboard", "/customers", "/invoices"];
       const isProtectedPath = protectedPaths.some((path) =>
-        nextUrl.pathname.startsWith(path)
+        nextUrl.pathname.startsWith(path),
       );
 
       if (isProtectedPath) {
