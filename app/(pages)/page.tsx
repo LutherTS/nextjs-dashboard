@@ -21,7 +21,6 @@ export default function Page() {
           Replaced later on below with CSS Modules according to the course. */}
           <div className="flex w-20 content-center justify-between">
             <div className={styles.shape}></div>
-
             <Image
               // <img
               className="rounded grayscale"
