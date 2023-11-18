@@ -11,6 +11,11 @@ const users = [
 ];
 
 const customers = [
+  /* Adding slug to each existing customer
+    UPDATE customers
+    SET slug='delba-de-oliveira'
+    WHERE id='3958dc9e-712f-4377-85e9-fec4b6a6442a' 
+  */
   {
     id: "3958dc9e-712f-4377-85e9-fec4b6a6442a",
     name: "Delba de Oliveira",
