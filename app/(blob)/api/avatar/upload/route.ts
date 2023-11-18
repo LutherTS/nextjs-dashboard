@@ -8,6 +8,8 @@ export async function POST(request: Request): Promise<NextResponse> {
   // Adding "!"'s so that filename and request can't be seen as null
   const blob = await put(filename!, request.body!, {
     access: "public",
+    // addRandomSuffix: true, // that's the default
+    addRandomSuffix: false,
   });
 
   return NextResponse.json(blob);
