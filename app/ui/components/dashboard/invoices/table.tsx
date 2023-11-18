@@ -29,8 +29,10 @@ export default async function InvoicesTable({
                 <div className="flex items-center justify-between border-b pb-4">
                   <div>
                     <div className="mb-2 flex items-center">
-                      <Image
-                        src={invoice.image_url}
+                      {/* <Image */}
+                      <img
+                        // src={invoice.image_url}
+                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.slug}.png`}
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
@@ -93,8 +95,10 @@ export default async function InvoicesTable({
                   <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md dark:bg-gray-100 sm:pl-6">
                     <div className="flex items-center gap-3">
                       {/* Bigging images from 28 to 38 to equate the heights. */}
-                      <Image
-                        src={invoice.image_url}
+                      {/* <Image */}
+                      <img
+                        // src={invoice.image_url}
+                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.slug}.png`}
                         className="rounded-full"
                         width={38}
                         height={38}

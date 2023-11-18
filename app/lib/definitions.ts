@@ -10,6 +10,7 @@ export type User = {
   password: string;
 };
 
+// Adding slug? to definitions that use image_url
 export type Customer = {
   id: string;
   name: string;
@@ -37,6 +38,7 @@ export type LatestInvoice = {
   id: string;
   name: string;
   image_url: string;
+  slug?: string;
   email: string;
   amount: string;
 };
@@ -52,6 +54,7 @@ export type InvoicesTable = {
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
   date: string;
   amount: number;
   status: "pending" | "paid";
@@ -62,6 +65,7 @@ export type CustomersTable = {
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
   total_invoices: number;
   total_pending: number;
   total_paid: number;
@@ -72,6 +76,7 @@ export type FormattedCustomersTable = {
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
   total_invoices: number;
   total_pending: string;
   total_paid: string;

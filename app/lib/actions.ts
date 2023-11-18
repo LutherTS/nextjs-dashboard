@@ -38,7 +38,7 @@ export type State = {
 };
 
 export async function createInvoice(prevState: State, formData: FormData) {
-  console.log("export async function createInvoice", prevState);
+  console.log("export async function createInvoice prevState", prevState);
 
   const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get("customerId"),
@@ -82,7 +82,7 @@ export async function updateInvoice(
   prevState: State,
   formData: FormData,
 ) {
-  console.log("export async function updateInvoice", prevState);
+  console.log("export async function updateInvoice prevState", prevState);
 
   const validatedFields = UpdateInvoice.safeParse({
     customerId: formData.get("customerId"),
@@ -134,7 +134,7 @@ export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
 ) {
-  console.log("export async function authenticate", prevState);
+  console.log("export async function authenticate prevState", prevState);
 
   try {
     await signIn("credentials", Object.fromEntries(formData));
