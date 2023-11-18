@@ -19,7 +19,17 @@ export default function Page() {
             className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent border-r-transparent"
           />
           Replaced later on below with CSS Modules according to the course. */}
-          <div className={styles.shape}></div>
+          <div className="flex w-20 content-center justify-between">
+            <div className={styles.shape}></div>
+            <Image
+              // <img // Even here there still are next.config.js issues.
+              className="rounded grayscale"
+              src="https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/nintendobserver-xvftAXYaUIJbUqSgl8gDCx72Rh4Znl.jpg"
+              width={30}
+              height={30}
+              alt="My first blob on Vercel Storage"
+            />
+          </div>
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >

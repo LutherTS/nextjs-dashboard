@@ -10,11 +10,13 @@ export type User = {
   password: string;
 };
 
+// Adding slug? to definitions that use image_url
 export type Customer = {
   id: string;
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
 };
 
 export type Invoice = {
@@ -36,13 +38,16 @@ export type LatestInvoice = {
   id: string;
   name: string;
   image_url: string;
+  slug?: string;
   email: string;
   amount: string;
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
-export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
+// Now with customer_slug instead of slug
+export type LatestInvoiceRaw = Omit<LatestInvoice, "amount" | "slug"> & {
   amount: number;
+  customer_slug?: string;
 };
 
 export type InvoicesTable = {
@@ -51,6 +56,7 @@ export type InvoicesTable = {
   name: string;
   email: string;
   image_url: string;
+  customer_slug?: string;
   date: string;
   amount: number;
   status: "pending" | "paid";
@@ -61,6 +67,7 @@ export type CustomersTable = {
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
   total_invoices: number;
   total_pending: number;
   total_paid: number;
@@ -71,6 +78,7 @@ export type FormattedCustomersTable = {
   name: string;
   email: string;
   image_url: string;
+  slug?: string;
   total_invoices: number;
   total_pending: string;
   total_paid: string;

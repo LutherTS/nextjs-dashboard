@@ -11,6 +11,13 @@ const users = [
 ];
 
 const customers = [
+  /* Adding slug to each existing customer
+    UPDATE customers
+    SET slug='delba-de-oliveira'
+    WHERE id='3958dc9e-712f-4377-85e9-fec4b6a6442a' 
+    In order to easily obtain
+    https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/delba-de-oliveira.png
+  */
   {
     id: "3958dc9e-712f-4377-85e9-fec4b6a6442a",
     name: "Delba de Oliveira",

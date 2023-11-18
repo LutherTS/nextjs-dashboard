@@ -34,7 +34,9 @@ export default async function CustomersTable({
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
                             <Image
-                              src={customer.image_url}
+                              // <img
+                              // src={customer.image_url}
+                              src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${customer.slug}.png`}
                               className="rounded-full"
                               alt={`${customer.name}'s profile picture`}
                               width={28}
@@ -94,7 +96,9 @@ export default async function CustomersTable({
                         <div className="flex items-center gap-3">
                           {/* Bigging images from 28 to 38 to equate the heights. */}
                           <Image
-                            src={customer.image_url}
+                            // <img
+                            // src={customer.image_url}
+                            src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${customer.slug}.png`}
                             className="rounded-full"
                             alt={`${customer.name}'s profile picture`}
                             width={38}
