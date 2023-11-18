@@ -44,8 +44,10 @@ export type LatestInvoice = {
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
-export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
+// Now with customer_slug instead of slug
+export type LatestInvoiceRaw = Omit<LatestInvoice, "amount" | "slug"> & {
   amount: number;
+  customer_slug?: string;
 };
 
 export type InvoicesTable = {
@@ -54,7 +56,7 @@ export type InvoicesTable = {
   name: string;
   email: string;
   image_url: string;
-  slug?: string;
+  customer_slug?: string;
   date: string;
   amount: number;
   status: "pending" | "paid";

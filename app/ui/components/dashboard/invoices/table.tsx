@@ -32,7 +32,7 @@ export default async function InvoicesTable({
                       {/* <Image */}
                       <img
                         // src={invoice.image_url}
-                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.slug}.png`}
+                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.customer_slug}.png`}
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
@@ -98,7 +98,7 @@ export default async function InvoicesTable({
                       {/* <Image */}
                       <img
                         // src={invoice.image_url}
-                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.slug}.png`}
+                        src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.customer_slug}.png`}
                         className="rounded-full"
                         width={38}
                         height={38}

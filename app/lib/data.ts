@@ -46,7 +46,9 @@ export async function fetchLatestInvoices() {
 
     // Adding customers.slug
     const data = await sql<LatestInvoiceRaw>`
-      SELECT invoices.amount, customers.name, customers.image_url, customers.slug, customers.email, invoices.id
+      SELECT invoices.amount, customers.name, customers.image_url, 
+      customers.slug AS customer_slug, 
+      customers.email, invoices.id
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
@@ -129,7 +131,7 @@ export async function fetchFilteredInvoices(
         customers.name,
         customers.email,
         customers.image_url,
-        customers.slug
+        customers.slug AS customer_slug
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       WHERE
