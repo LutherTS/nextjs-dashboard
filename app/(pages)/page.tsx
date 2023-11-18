@@ -21,8 +21,8 @@ export default function Page() {
           Replaced later on below with CSS Modules according to the course. */}
           <div className="flex w-20 content-center justify-between">
             <div className={styles.shape}></div>
-            {/* <Image */}
-            <img // Even here there still are next.config.js issues.
+            <Image
+              // <img // Even here there still are next.config.js issues.
               className="rounded grayscale"
               src="https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/nintendobserver-xvftAXYaUIJbUqSgl8gDCx72Rh4Znl.jpg"
               width={30}

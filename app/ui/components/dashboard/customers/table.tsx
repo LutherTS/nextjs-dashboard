@@ -33,8 +33,8 @@ export default async function CustomersTable({
                       <div>
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
-                            {/* <Image */}
-                            <img
+                            <Image
+                              // <img
                               // src={customer.image_url}
                               src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${customer.slug}.png`}
                               className="rounded-full"
@@ -95,8 +95,8 @@ export default async function CustomersTable({
                       <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-ss-md group-last-of-type:rounded-es-md dark:bg-gray-100 sm:pl-6">
                         <div className="flex items-center gap-3">
                           {/* Bigging images from 28 to 38 to equate the heights. */}
-                          {/* <Image */}
-                          <img
+                          <Image
+                            // <img
                             // src={customer.image_url}
                             src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${customer.slug}.png`}
                             className="rounded-full"

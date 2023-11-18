@@ -37,8 +37,8 @@ export default async function LatestInvoices() {
                 )}
               >
                 <div className="flex items-center">
-                  {/* <Image */}
-                  <img
+                  <Image
+                    // <img
                     // src={invoice.image_url}
                     src={`https://ts8v2xbiemab19zt.public.blob.vercel-storage.com/${invoice.customer_slug}.png`} // Works.
                     alt={`${invoice.name}'s profile picture`}

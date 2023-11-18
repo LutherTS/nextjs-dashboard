@@ -6,7 +6,8 @@ const nextConfig = {
         protocol: "https",
         hostname: "ts8v2xbiemab19zt.public.blob.vercel-storage.com",
         port: "",
-        pathname: "/**/*",
+        pathname: "**/*",
+        // So it just was the "/" at the beginning messing everything.
       },
     ],
   },
