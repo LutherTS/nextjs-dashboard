@@ -23,6 +23,8 @@ export default function SideNav() {
         <NavLinks />
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 dark:bg-gray-800 md:block"></div>
         <form
+          // That could have been an external server component.
+          // Perhaps something I could try later on.
           action={async () => {
             "use server";
             await signOut();
