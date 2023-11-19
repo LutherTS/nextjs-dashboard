@@ -7,9 +7,9 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    // Personally added md:max-h-screen, px-6 instead of p-6 py-4
+    // Personally added px-6 instead of p-6 py-4
     // Now opting for a p-4 instead of px-6 py-4
-    <main className="flex min-h-screen flex-col p-4 md:max-h-screen">
+    <main className="flex min-h-screen flex-col p-4">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
         <AcmeLogo />
       </div>
